@@ -27,7 +27,6 @@ function Row({ title, fetchUrl, isLargeRow }) {
   };
 
   const handleClick = (movie) => {
-    console.log("Movie: ", movie);
     if (trailerUrl) {
       setTrailerUrl("");
     } else {
@@ -39,7 +38,6 @@ function Row({ title, fetchUrl, isLargeRow }) {
           ""
       )
         .then((url) => {
-          console.log("URL: ", url);
           const urlParams = new URLSearchParams(new URL(url).search);
           setTrailerUrl(urlParams.get("v"));
         })
